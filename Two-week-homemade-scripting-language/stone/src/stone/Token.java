@@ -5,7 +5,7 @@ package stone;
  */
 public class Token {
     public static final Token EOF = new Token(-1){};
-    public static final String EOL = "\nn";
+    public static final String EOL = "\n";
     private int lineNumber;
 
     protected Token(int line) {

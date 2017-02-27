@@ -64,5 +64,4 @@ public class CodeDialog extends Reader {
         }
     }
 
-
 }
