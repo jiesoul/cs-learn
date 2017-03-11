@@ -60,4 +60,49 @@ fun {AddList L1 L2}
    else nil end
 end
 
-{Browse {Pascal 20}}
+fun {FastPascal N}
+   if N==1 then [1]
+   else L in
+      L = {FastPascal N-1}
+      {AddList {ShiftLeft L} {ShiftRight L}}
+   end
+end
+
+
+{Browse {FastPascal 20}}
+
+declare Ints
+fun lazy {Ints N}
+   N|{Ints N=1}
+end
+
+L={Ints 0}
+{Browse L}
+
+{Browse L.3}
+
+declare
+fun lazy {PascalList Row}
+   Row|{PascalList
+        {AddList {ShiftLeft Row}
+         {ShiftRight Row}}}
+end
+
+declare
+L={PascalList [1]}
+{Browse L}
+
+{Browse L.1}
+{Browse L.2.1}
+
+declare
+fun {PascalList2 N Row}
+   if N==1 then [Row]
+   else
+      Row|{PascalList2 N-1
+           {AddList {ShiftLeft Row}
+            {ShiftRight Row}}}
+   end
+end
+
+{Browse {PascalList2 11 [1]}}
