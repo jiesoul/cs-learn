@@ -234,3 +234,7 @@ thread
       C:=J+1
    end
 end
+
+
+declare
+C = 10
