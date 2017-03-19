@@ -483,7 +483,38 @@ Restriction定义的新环境是一个已存在的环境的子集。符号：E|{
 * 本书两个视角都用，当我们对它内部感兴趣时我们用定义视角。当我们感兴趣的是它是怎么的行为时，我们使用观察视角。
 * 定义声明程序的两个特别流行的风格：函数式和逻辑式。在函数式风格中，我们说一个组件作为一数学函数
 
+* Specification languages
+
+* Implementing components in the declareative model 在声明模型里所有的操作都可以做这些推导：
+    * 第一，所有的基本操作在声明模型里都是声明的。
+    * 第二，声明操作和声明模型的构造相结合，会得出声明操作。
+
+### 迭代计算 Iterative computation
+一个迭代计算是一个循环，栈大小是由独立的迭代数字常量限制的。
+* 通用概要 
+    * 开始于一个初始化状态S<sub>0</sub>并且转换状态在接下来的步骤直到最终状态S<sub>final</sub>.
+
+### 递归计算 Recursive computation
+Iterative computations are a special case of a more general kind of computation, called recursive computation. 
+
+### 使用递归编程
+递归计算是声明式程序的心脏。
+
+* 使用lists的基本技巧：
+    * 用递归思考：基本方法是解决一个问题在这个问题的更小版本上。
+    * 转换递归到迭代：因为随着输入的大小栈空间随之生长，这是很奢侈的，所以我们实际上使用状态转换实现它们。
+    * 迭代计算的正确性：简单有效的方法是通过状态的不变化推导迭代计算。
+    * 通过给定类型构建程序：一个使用类型计算的函数几乎肯定的一个接近类型定义的递归结构。
+
+* mergesort
+    * 把lists分成大约相等的小lists
+    * 使用合并排序递归排序两个小lists
+    * 合并两个已经排序的lists到最终的结果。
+
+
         
     
     
   
+
+
