@@ -511,6 +511,18 @@ Iterative computations are a special case of a more general kind of computation,
     * 使用合并排序递归排序两个小lists
     * 合并两个已经排序的lists到最终的结果。
 
+* 队列
+* 树 列表是一个线形结构，树是一个分支结构。
+    * OBTree    ordered binary tree 有序二叉树每个结点包括一个值序对。
+        * 树遍历 深度优先和广度优先。
+    * 解析器 
+        * Tokenizer 读取字符序列输出tokens序列。
+        * Parser 读取tokens序列，输出抽象语法树(abstract syntax tree)
+        * Code generator 遍历语法树生成实际机器或者虚拟机器的低级指令。
+
+### Time and space efficiency 时间和空间效率
+
+
 
         
     
