@@ -645,3 +645,227 @@ proc {Append Xs Ys ?Zs}
       {Append Xr Ys Zr}
    end
 end
+
+% 3.6
+
+declare
+local A=1.0 B=3.0 C=2.0 D RealSol X1 X2 in
+   D=B*B-4.0*A*C
+   if D>=0.0 then
+      RealSol=true
+      X1=(~B+{Sqrt D})/(2.0*A)
+      X2=(~B-{Sqrt D})/(2.0*A)
+   else
+      RealSol=false
+      X1=~B/(2.0*A)
+      X2={Sqrt ~D}/(2.0*A)
+   end
+   {Browse RealSol#X1#X2}
+end
+
+declare
+proc {QuadraticEquation A B C ?RealSol ?X1 ?X2}
+   D=B*B-4.0*A*C
+in
+   if D>=0.0 then
+      RealSol=true
+      X1=(~B+{Sqrt D})/(2.0*A)
+      X2=(~B-{Sqrt D})/(2.0*A)
+   else
+      RealSol=false
+      X1=~B/(2.0*A)
+      X2={Sqrt ~D}/(2.0*A)
+   end
+end
+
+declare RS X1 X2 in
+{QuadraticEquation 1.0 3.0 2.0 RS X1 X2}
+{Browse RS#X1#X2}
+
+declare
+fun {SumList L}
+   case L
+   of nil then 0
+   [] X|L1 then X+{SumList L1}
+   end
+end
+
+declare
+fun {FlodR L F U}
+   case L
+   of nil then U
+   [] X|L1 then {F X {FoldR L1 F U}}
+   end
+end
+
+declare
+fun {SumList L}
+   {FoldR L fun {$ X Y} X+Y end 0}
+end
+
+declare
+fun {ProductList L}
+   {FoldR L fun{$ X Y} X*Y end 1}
+end
+
+declare
+fun {Some L}
+   {FoldR L fun {$ X Y} X orelse Y end false}
+end
+
+declare
+fun {genericMergeSort F Xs}
+   fun {Merge Xs Ys}
+      case Xs # Ys
+      of nill # Ys then Ys
+      [] Xs # nil then Xs
+      [] (X|Xr) # (Y|Yr) then
+         if {F X Y} then X|{Merge Xr Ys}
+         else Y|{Merge Xs Yr} end
+      end
+   end
+   fun {MergeSort Xs}
+      case Xs
+      of nil then nil
+      [] [X] then [X]
+      else Ys Zs in
+         {Split Xs Ys Zs}
+         {Merge {MergeSort Ys} {MergeSort Zs}}
+      end
+   end
+in
+   {MergeSort Xs}
+end
+
+declare
+fun {MergeSort Xs}
+   {GenericMergeSort fun {$ A B} A<B end Xs}
+end
+
+declare
+fun {MakeSort F}
+   fun {$ L}
+      {Sort L F}
+   end
+end
+
+declare
+proc {For A B S P}
+   proc {LoopUp C}
+      if C<=B then {P C} {LoopUp C+S} end
+   end
+   proc {LoopDown C}
+      if C>=B then {P c} {LoopDown C+S} end
+   end
+in
+   if S>0 then {LoopUp A} end
+   if S<0 then {LoopDown A} end
+end
+
+declare
+proc {ForAll L P}
+   case L
+   of nil then skip
+   [] X|L2 then
+      {P X}
+      {ForAll L2 P}
+   end
+end
+
+declare
+proc {ForAcc A B S P In ?Out}
+   proc {LoopUp C In ?Out}
+   Mid in
+      if C<=B then {P In C Mid} {LoopUp C+S Mid Out}
+      else In=Out end
+   end
+   proc {LoopDown C In ?Out}
+   Mid in
+      if C>=B then {P In C Mid} {LoopDown C+S Mid Out}
+      else In=Out end
+   end
+in
+   if S>0 then {LoopUp A In Out} end
+   if S<0 then {LoopDown A In Out} end
+end
+
+declare
+proc {ForAllAcc L P In ?Out}
+   case L
+   of nil then In=Out
+   [] X|L2 then Mid in
+      {P In X Mid}
+      {ForAllAcc L2 P Mid Out}
+   end
+end
+
+declare
+fun {FoldL L F U}
+   case L
+   of nil then U
+   [] X|L2 then
+      {FoldL L2 F {F U X}}
+   end
+end
+
+declare
+fun {FoldR L F U}
+   fun {Loop L U}
+      case L
+      of nil then U
+      [] X|L2 then
+         {Loop L2 {F X U}}
+      end
+   end
+in
+   {Loop {Reverse L} U}
+end
+
+declare
+fun {Map Xs F}
+   case Xs
+   of nil then nil
+   [] X|Xr then {F X}|{Map Xr F}
+   end
+end
+
+declare
+fun {Map Xs F}
+   {FoldR Xs fun {$ I A} {F I}|A end nil}
+end
+
+declare
+fun {Filter Xs F}
+   case Xs
+   of nil then nil
+   [] X|Xr andthen {F X} then X|{Filter Xr f}
+   [] X|Xr then {Filter Xr F}
+   end
+end
+
+fun {Filter Xs F}
+   {FoldR Xs fun {$ I A} if {F I} then I|A else A end end nil}
+end
+
+declare
+proc {DFS Tree}
+   tree(sons:Sons ...)=Tree
+in
+   for T in Sons do {DFS T} end
+end
+
+declare
+proc {VistitNodes Tree P}
+   tree{sons:Sons ...)=Tree
+in
+   {P Tree}
+   for T in Sons do {VisitNodes T P} end
+end
+
+% 3.7
+declare NewStack Push Pop IsEmpty
+fun {NewStack} nil end
+fun {Push S E} E|S end
+fun {Pop S E} case S of X|S1 then E=X S1 end end
+fun {IsEmpty S} S==nil end
+
