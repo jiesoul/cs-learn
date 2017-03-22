@@ -572,3 +572,17 @@ Iterative computations are a special case of a more general kind of computation,
 stream可能是一个未绑定的信息列表。尾部是一个数据流变量。
 * 生产者/消费者 一个线程叫做生产者建立流，一个叫消费者读取流。
 
+### 数字逻辑模拟
+* 非门 与门 或门 异或门 
+* 组合电路有限制不能存储信息.
+
+### 直接使用声明并发模型
+
+### 延迟计算
+
+### Soft real-time programming
+
+### Limitations and extensions of declarative programming
+
+### Haskell language
+
