@@ -586,3 +586,21 @@ stream可能是一个未绑定的信息列表。尾部是一个数据流变量�
 
 ### Haskell language
 
+## Message-Passing Concurrency
+
+### 消息传递并发模型
+通过添加ports扩展声明并发模型。
+一个port是一个ADT，有两个操作，建立管道和发送。
+* {NewPort S p} 建立新的port使用入口P和流S。
+* {Send P X} 把X 加到入口P对应的流上。
+
+### Port objects
+port object是一个或多个ports和一个stream port的组合。这在两个方面扩展了stream objects：首先多对一组合是可能的，多个threads能引用一个给定的port object并且独立的send给它。使用一个stream object是不可能的，因为它不知道它的下一个消息来自哪。第二，port objects能植入内部数据结构。
+
+在消息传递模型中，一个程序是由正在发送和接收消息的port objects构成。
+
+定义一个port object，我们仅仅需要一个初始状态Init和状态转换函数Fun。
+
+### Simple message protocols
+RMI(Remote Method Invocation) 它允许一个object去调用另一个object在不同的操作系统进程中，可能是相同的机器也可能是不同的机器通过网络相连。
+
