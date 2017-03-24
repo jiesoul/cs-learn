@@ -1,0 +1,8 @@
+PARSER_BEGIN(MyParser)
+    class_MyParser()
+PARSER_END (MyParser)
+
+/* */
+TOKEN : (
+    <IF: >
+)
