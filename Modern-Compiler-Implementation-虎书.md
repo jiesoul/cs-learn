@@ -1,8 +1,8 @@
 # 现代编译器实现 - 虎书
 
-## Part 1  编译基础
+## Part I Fundamentals of Compilation 编译基础
 
-### 1 介绍
+### 1 Introduction 介绍
 
 #### 1. 接口与模块
 * 编译器的各阶段：
@@ -196,7 +196,7 @@ void Assignment() : {} { Identifier() "=" Expression() ";"}
 
 ### 12 Putting It All Together
 
-## part 2 Advanced Topics
+## Part II Advanced Topics
 
 ### 13 Garbage Collection
 
