@@ -228,11 +228,39 @@ binding 关系到两个事情，名字和它命名的事情。绑定时间是绑
 
 #### Summary and Concluding Remarks
 
-
+句法关注有效程序的形式，语义关注它的意义。
 
 ### 4 Semantic Analysis
 
+语义分为静态语义和动态语义，尽管分隔线比较模糊。编译器在编译时强制执行静态语义匹配，它生成的代码在运行时强制执行动态语义匹配。
+
+#### The Role of the Semantic Analyzer
+
+语义分析和中间代码生成的分隔就是编译器前端和后端的分隔。
+
+编译时的算法预测运行时的行为叫做静态分析。
+
+#### Attribute Grammars
+
+#### Evaluating Attributes
+
+对属性求值的过程叫做解析树的注解或装饰。
+
+合成属性
+
+继承属性
+
+属性流
+
+#### Action Routines
+
+####　Space Management for Attributes
+
+#### Decorating a Syntax Tree
+
 ### 5 Target Machine Architecture
+
+一个编译器就是一个翻译器，它转换一个语言到另一个语言。
 
 ## CORE ISSUES IN LANGUAGE DESIGN
 
