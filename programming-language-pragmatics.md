@@ -117,7 +117,9 @@ id_list -> id
 id_list -> id_list, id
 ```
 
-在上下文无关方法中每个规则叫做产生式。产生式的左边符号是变量或者非终端符。可能会有签单的产生式有相同的左边。来之于方法的字符串叫做终端符，它们不会出现的左边。在程序语言中，上下文无关文法的终端符是语言的单词。非终端符中的一个，通常是第一个产生式的左边的一个，被叫做开始符号。它通过综合方法定义。
+在上下文无关方法中每个规则叫做产生式。产生式的左边符号是变量或者非终端符。多个产生式可能有相同的左边。来之于文法的推导的字符串叫做终端符，它们不会出现在产生式的左边。在程序语言中，上下文无关文法的终端符是语言的单词。非终端符中的一个，通常是第一个产生式的左边的一个，被叫做开始符号。它表示整个文法定义出的结构。
+
+扫描器不区分标识符的不同，那是解析器的工作，它只是保存所有之后使用的。
 ```
 slope * x + intercept
 =====
@@ -131,9 +133,21 @@ expr ⟹ expr op expr
     (slope)      (x)      (intercept)
 ```
 
-一个上下文无关文法显示怎么生成一个正当的符合文法的终端字符串：用开始符号开始。
+一个文法有两个以上的终端符组成的解析树号做歧义。
 
 算术操作中的结合性和优先级。
+
+* check
+1. What is the difference between syntax and semantics? 句法和语义的区别
+2. What are the three basic operations that can be used to build complex regular expressions from simpler regular expressions? 从简单正则表达式到复杂的三个基本操作是什么？
+3. What additional operation (beyond the three of regular expressions) is provided in context-free grammars? 在上下文无关文法中超越正则表达式的额外操作是什么？
+4. What is Backus-Naur form? When and why was it devised? BNF是什么，它为什么能被推导？
+5. Name a language in which indentation affects program syntax. 
+6. When discussing context-free languages, what is a derivation? What is a sentential form? 当讨论上下文无关文法时，什么是推导？什么是句法形式？
+7. What is the difference between a right-most derivation and a left-most derivation? 最左推导和最右推导的不同？
+8. What does it mean for a context-free grammar to be ambiguous? 歧义意味什么？
+9. What are associativity and precedence?Why are they significant in parse trees? 什么是结合性和优先级，为什么是重要的？
+
 
 #### Scanning
 
