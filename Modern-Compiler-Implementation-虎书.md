@@ -52,7 +52,7 @@ Yacc(转换语法到解析程序)和Lex(转换声明规范到词法分析程序)
 
 消除歧义的两个规则：
     * Longest match: 匹配最长
-    * Rule priority: 规则优先
+    * Rule priority: 优先规则  匹配第一个
 
 #### 3. FINITE AUTOMATA 有限自动机
 
