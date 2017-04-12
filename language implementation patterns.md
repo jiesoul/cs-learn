@@ -2,9 +2,48 @@
   Create Your Own Domain-Specific and General Programming Languages
 
 ## Preface
+
 ## Getting Started with Paresing
+
 ### Language Applications Cracked Open 
-    [[media/language-application-pipeline.png]]
+
+四个阶段：
+
+![](media/language-application-pipeline.png)
+
+* Rader：从输入流构建数据结构，输入流通常是文件而非二进制数据。
+* Generator：  A generator walks an internal data structure and emits output. Examples include object-to-relational database mapping tools, object serializers, source code generators, and web page generators.
+* Translator or Rewriter: 读取文本或二进制输入，输出相等的其它语言。
+* Interpreter: 读取，解码，和执行指令。
+
+Bytecode Interpreter
+
+![](media/Bytecode-interpreter-pipeline.png)
+
+Source-level Bug Finder
+
+![](media/Source-level-bug-finder-pipeline.png)
+
+Java Bug Finder
+
+![](media/recognizes-Java-code-and-builds-an-IR.png)
+
+Java Bug Finder Part Deux
+
+![](media/Java-bug-finder-pipeline-feeding.png)
+
+C compilation process 
+
+![](media/C-compilation-process-pipeline.png)
+
+C compiler application
+
+![](media/Isolated-C-compiler-application-pipeline.png)
+
+C++ (cfront) compilation process
+
+![](media/C++ (cfront) compilation process pipeline.png)
+
 ### Basic Parsing Patterns 
     - 模式1 映射语法到递归下降解析，这个模式告诉我们怎么转换语法到手工解析树，它被用于下面三个模式。
     - 模式2 LL(1)递归下降词法分析器，这个模式把字符流转换成通过解析器定义的之后的模式的单词。
