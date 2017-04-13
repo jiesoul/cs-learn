@@ -4,7 +4,7 @@ public class Parser {
     int k;
     int p  = 0;
 
-    public Parser(Lexr input, int k) {
+    public Parser(Lexer input, int k) {
         this.input = input;
         this.k = k;
         lookahead = new Token[k];

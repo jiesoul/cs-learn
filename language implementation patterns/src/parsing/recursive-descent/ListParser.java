@@ -2,12 +2,14 @@ public class ListParser extends Parser {
     public ListParser(Lexer input) {
         super(input);
     }
-    public void lsit() {
+
+    public void list() {
         match(ListLexer.LBRACK);
         elements();
         match(ListLexer.RBRACK);
     }
-    void elements(){
+
+    void elements() {
         element();
         while (lookahead.type == ListLexer.COMMA) {
             match(ListLexer.COMMA);
@@ -16,7 +18,7 @@ public class ListParser extends Parser {
     }
 
     void element() {
-        if(lookahead.type == ListLexer.NAME) {
+        if (lookahead.type == ListLexer.NAME) {
             match(ListLexer.NAME);
         } else if (lookahead.type == ListLexer.LBRACK) {
             list();
