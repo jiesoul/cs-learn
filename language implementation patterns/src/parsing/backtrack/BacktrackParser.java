@@ -1,4 +1,5 @@
-public class BacktrackParser {
+public class BacktrackParser extends Parser {
+    
     public void stat() throws RecognitionException {
         if (speculate_stat_alt1()) {
             list();
