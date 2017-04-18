@@ -28,13 +28,21 @@ java语言是强类型和静态类型的。
 
 ### Lexical Translations
 
-一个未经加工的 Uniode 字符流被转换成一个 tokens 的序列。
+一个未经加工的 Uniode 字符流被转换成一个 tokens 的序列。三个转换步骤：
+
+* 原始的 Unicode 字符流转换成相应的 Unicode 字符，\uxxxx 中的 xxxxx 是一个十六进制值，表示 UTF-16 代码单元的编码是 xxxx。这个转换步骤允许任何程序仅仅用 ASCII 字符表示。
+* 第一步的 Unicode 流转换成字符输入流和行终止符。
+* 第二步的结果转换成输入元素序列，空白符和注释被丢弃，由句法的终端符号单词组成。
+
+每一步都是最长匹配转换，
 
 ### Unicode Escapes Unicode转义
 
-
+java 语言编译器首先识别 Unicode 转义输入，转换成 ASCII 字符。
 
 ## 4. Types,Values,and Variables
+
+
 
 ## 5. Conversions and Contexts
 
@@ -65,3 +73,4 @@ java语言是强类型和静态类型的。
 ## 18. Type Inference
 
 ## 19. Synatax
+
