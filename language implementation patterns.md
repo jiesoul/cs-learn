@@ -22,7 +22,7 @@ Bytecode Interpreter
 
 Source-level Bug Finder
 
-![](media/Source-level-bug-finder-pipeline.png)
+![](media/Source-level bug-finder-pipeline.png)
 
 Java Bug Finder
 
@@ -42,7 +42,7 @@ C compiler application
 
 C++ (cfront) compilation process
 
-![](media/C++ (cfront) compilation process pipeline.png)
+![](media/C++compilation process pipeline.png)
 
 ### 基本解析模式 Basic Parsing Patterns 
 
