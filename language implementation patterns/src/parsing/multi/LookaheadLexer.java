@@ -1,3 +1,4 @@
+package parsing.multi;
 public class LookaheadLexer extends Lexer {
 
     public static int NAME = 2;
@@ -36,7 +37,7 @@ public class LookaheadLexer extends Lexer {
                 return new Token(EQUALS, "=");
             default:
                 if (isLETTER()) {
-                    return NAME();
+                    return name();
                 }
                 throw new Error("invalid character: " + c);
             }

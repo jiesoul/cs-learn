@@ -1,3 +1,4 @@
+package parsing.multi;
 public class LookaheadParser extends Parser {
 
     void element() {

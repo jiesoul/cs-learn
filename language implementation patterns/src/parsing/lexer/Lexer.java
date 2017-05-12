@@ -1,3 +1,5 @@
+package parsing.lexer;
+
 public abstract class Lexer {
     public static final char EOF = (char) -1;
     public static final int EOF_TYPE = 1;
@@ -22,8 +24,7 @@ public abstract class Lexer {
     public void match(char x) {
         if (c == x) {
             consume();
-        }
-        else {
+        } else {
             throw new Error("expecting " + x + "; found" + c);
         }
     }

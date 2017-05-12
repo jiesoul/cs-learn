@@ -1,3 +1,8 @@
+package parsing.backtrack;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Parser {
     Lexer input;
     List<Integer> markers;
@@ -8,7 +13,7 @@ public class Parser {
     public Parser(Lexer input, int k) {
         this.input = input;
         this.k = k;
-        lookahead = new Token[k];
+        lookahead = new ArrayList<>();
         for (int i=1; i<=k; i++) {
             consume();
         }
