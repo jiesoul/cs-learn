@@ -1,3 +1,5 @@
+package parsing.memoize;
+
 public class LookaheadLexer extends Lexer {
 
     public static int NAME = 2;

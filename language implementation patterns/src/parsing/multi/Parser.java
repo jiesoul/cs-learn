@@ -1,6 +1,7 @@
 package parsing.multi;
 
 public class Parser {
+
     Lexer input;
     Token[] lookahead;
     int k;

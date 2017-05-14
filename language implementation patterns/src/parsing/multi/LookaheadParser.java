@@ -1,5 +1,24 @@
 package parsing.multi;
+
 public class LookaheadParser extends Parser {
+
+    public LookaheadParser(Lexer input, int k) {
+        super(input, k);
+    }
+
+    void list() {
+        match(LookaheadLexer.LBRACK);
+        elements();
+        match(LookaheadLexer.RBRACK);
+    }
+
+    void elements() {
+        element();
+        while (LA(1)==LookaheadLexer.COMMA) {
+            match(LookaheadLexer.COMMA);
+            element();
+        }
+    }
 
     void element() {
         if (LA(1) == LookaheadLexer.NAME && LA(2) == LookaheadLexer.EQUALS) {

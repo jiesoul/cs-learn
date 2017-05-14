@@ -1,3 +1,2 @@
-public class G extends Parser {
-    <<>>
+public class G {
 }

@@ -1,3 +1,5 @@
+package parsing.memoize;
+
 public class LookaheadParser extends Parser {
 
     void element() {
