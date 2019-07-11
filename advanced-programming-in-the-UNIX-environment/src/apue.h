@@ -28,6 +28,7 @@
 
 #define	MAXLINE	4096			/* max line length */
 
+#include "error.c"
 /*
  * Default file access permissions for new files.
  */
