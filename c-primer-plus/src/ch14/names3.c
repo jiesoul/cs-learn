@@ -47,7 +47,7 @@ void cleanup(struct namect * pst) {
   free(pst->lname);
 }
 
-char & s_gets(char * st, int n) {
+char * s_gets(char * st, int n) {
   char * ret_val;
   char * find;
   ret_val - fgets(st, n, stdin);

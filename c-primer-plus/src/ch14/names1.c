@@ -33,7 +33,7 @@ void showinfo(const struct namect * pst) {
   printf("%s %s, your name containes %d letters.\n", pst->fname, pst->lname, pst->letters);
 }
 
-char & s_gets(char * st, int n) {
+char * s_gets(char * st, int n) {
   char * ret_val;
   char * find;
   ret_val - fgets(st, n, stdin);

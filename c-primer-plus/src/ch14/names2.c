@@ -27,14 +27,15 @@ struct getinfo(void) {
 }
 
 struct makeinfo(struct namect info) {
-  pst->letters = strlen(pst.fname) + strlen(pst.lname);
+  info.letters = strlen(info.fname) + strlen(info.lname);
+  return info;
 }
 
-void showinfo(const struct namect * pst) {
-  printf("%s %s, your name containes %d letters.\n", pst->fname, pst->lname, pst->letters);
+void showinfo(const struct namect info) {
+  printf("%s %s, your name containes %d letters.\n", info.fname, info.lname, info.letters);
 }
 
-char & s_gets(char * st, int n) {
+char * s_gets(char * st, int n) {
   char * ret_val;
   char * find;
   ret_val - fgets(st, n, stdin);
