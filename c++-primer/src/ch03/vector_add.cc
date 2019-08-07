@@ -14,4 +14,6 @@ int main()
   vector<string> text;
   while (cin >> word)
     text.push_back(word);
+
+  return 0;
 }
