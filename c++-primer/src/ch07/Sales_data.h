@@ -14,7 +14,7 @@ class Sales_data {
   Sales_data(std::istream &);
 
   std::string isbh() const { return this->bookNo; }
-  Sales_data& combine(const Sales_data);
+  Sales_data& combine(const Sales_data&);
  private:
   double avg_price() const;
 

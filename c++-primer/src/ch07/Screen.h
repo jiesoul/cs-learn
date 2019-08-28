@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
-extern std::ostream& storeOn(std::ostream &, Screen &);
-extern BitMap& storeOn(BitMap &, Screen &);
+// extern std::ostream& storeOn(std::ostream &, Screen &);
+// extern BitMap& storeOn(BitMap &, Screen &);
 
 class Screen {
   friend class Window_mgr;
